@@ -1,0 +1,35 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#464D51</item>
+        <item name="colorPrimaryDark">#464D51</item>
+        <item name="colorAccent">#1FB3B3B3</item>
+        <item name="android:fontFamily">@font/comfortaa_regular</item>
+        <item name="popupMenuStyle">@style/Widget.MaterialComponents.PopupMenu</item>
+        <item name="android:contextPopupMenuStyle">@style/Widget.MaterialComponents.PopupMenu.ContextMenu</item>
+        <item name="actionOverflowMenuStyle">@style/Widget.MaterialComponents.PopupMenu.Overflow</item>
+    </style>
+
+   <style name="TextAppearance.AppCompat.Widget.ActionBar.Title" parent="@android:style/TextAppearance">
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/comfortaa_bold</item>
+        <item name="android:textColor">#FFFF</item>
+       <item name="android:layout_gravity">bottom</item>
+    </style>
+
+    <style name="TextComponent" />
+
+    <style name="TextComponent.ItemRow">
+        <item name="android:minHeight">48dp</item>
+        <item name="android:homeAsUpIndicator">@drawable/ic_action_back</item>
+
+    </style>
+
+    <style name="TextAppearance" parent="TextAppearance.AppCompat"/>
+    <style name="AppMaterialButton" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:backgroundTint">@color/button_disabled</item>
+    </style>
+
+
+</resources>

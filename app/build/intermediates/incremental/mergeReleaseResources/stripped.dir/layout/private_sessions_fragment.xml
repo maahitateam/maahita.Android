@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@android:color/white"
+tools:context=".ui.privatesessions.PrivateSessionsFragment">
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/sessionslistRecycler"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:clipToPadding="false"
+    android:background="@color/fragmentBackground"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:listitem="@layout/layout_session_list_item" />
+<ProgressBar
+    android:id="@+id/privateprogressbar"
+    android:indeterminateTint="@android:color/holo_red_dark"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:indeterminate="true"
+    android:foregroundGravity="bottom"
+    android:progress="0"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"/>
+<TextView
+    android:id="@+id/privatenodatalabel"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:padding="15dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Currently no sessions have been scheduled. stay in touch, we will come back soon."
+    />
+</androidx.constraintlayout.widget.ConstraintLayout>

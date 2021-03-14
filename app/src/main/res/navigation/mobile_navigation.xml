@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_sessions">
+
+    <fragment
+        android:id="@+id/navigation_sessions"
+        android:name="com.mobile.maahita.ui.home.HomeFragment"
+        android:label="Sessions"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_navigation_sessions_to_sessionDetailsFragment"
+            app:popUpTo="@id/navigation_sessions"
+            app:destination="@id/sessionDetailsFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+
+        <action
+            android:id="@+id/action_navigation_to_login"
+            app:destination="@id/loginFragment" />
+
+        <action
+            android:id="@+id/action_to_profileSettings"
+            app:destination="@id/profile_settings" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/profile_settings"
+        android:name="com.mobile.maahita.ui.profile_settings.SettingsFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile_settings" />
+    <fragment
+        android:id="@+id/sessionDetailsFragment"
+        android:name="com.mobile.maahita.ui.sessionDetails.SessionDetailsFragment"
+        android:label="@string/title_session_details"
+        tools:layout="@layout/fragment_session_details" >
+
+        <action
+            android:id="@+id/action_sessiondetails_to_login"
+            app:destination="@id/loginFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/feedbacksubmitform"
+        android:name="com.mobile.maahita.ui.feedback.Feedback"
+        android:label="@string/title_session_details"
+        tools:layout="@layout/feedback_fragment" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.mobile.maahita.ui.login.LoginFragment"
+        android:label="@string/title_activity_login"
+        tools:layout="@layout/activity_login" >
+
+        <action
+            android:id="@+id/action_loginFragment_to_fragment_signup"
+            app:destination="@id/fragment_signup"
+            app:enterAnim="@anim/catalyst_push_up_in"
+            app:exitAnim="@anim/catalyst_push_up_out"
+            app:popEnterAnim="@anim/catalyst_push_up_in"
+            app:popExitAnim="@anim/catalyst_push_up_out" />
+
+        <action
+            android:id="@+id/action_navigation_login_to_sessionDetails"
+            app:popUpTo="@id/navigation_sessions"
+            app:destination="@id/sessionDetailsFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_signup"
+        android:name="com.mobile.maahita.ui.signup.SignUpFragment"
+        android:label="signup"
+        tools:layout="@layout/activity_sign_up" />
+
+
+</navigation>

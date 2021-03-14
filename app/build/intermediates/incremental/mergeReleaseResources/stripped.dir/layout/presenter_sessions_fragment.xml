@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/fragmentBackground"
+        tools:context=".ui.presentersessions.PresenterSessions">
+    <TextView
+        android:id="@+id/txt_header_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@android:color/transparent"
+        android:drawableBottom="@drawable/cal_background"
+        android:padding="8dp"
+        android:text="Other sessions from the presenter"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <View
+        android:id="@+id/dummy_hr_view"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/background_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_header_view"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/sessionslistRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dummy_hr_view"
+        tools:listitem="@layout/layout_session_list_item" />
+    <com.kingfisher.easyviewindicator.RecyclerViewIndicator
+        android:id="@+id/presentersessRwIndicator"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@color/fragmentBackground"
+        app:avi_animation_enable="true"
+        app:avi_drawable="@drawable/blue_radius"
+        app:avi_drawable_unselected="@drawable/gray_radius"
+        app:avi_height="10dp"
+        app:avi_margin="10dp"
+        app:avi_width="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sessionslistRecycler"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
