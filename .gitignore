@@ -13,3 +13,5 @@
 .externalNativeBuild
 .cxx
 /app/release/
+private_key.pepk
+/app/google-services.json
