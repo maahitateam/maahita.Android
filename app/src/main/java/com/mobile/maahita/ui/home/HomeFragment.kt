@@ -153,7 +153,7 @@ class HomeFragment : Fragment(), OnDashboardItemClickListener {
     override fun onLiveClicked(liveSession: LiveSessions) {
         if (homeViewModel.IsUserLoggedIn() == true)
             homeViewModel.attendLive(liveSession.sessionId)?.addOnSuccessListener {
-                val meetingManager = MeetingManager()
+                val meetingManager = MeetingManager(this.requireContext())
                 val meetingOptions =
                     meetingManager.getMeetingOptions(liveSession.meetingID, liveSession.title)
                 JitsiMeetActivity.launch(this.context, meetingOptions)

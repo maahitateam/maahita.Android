@@ -242,7 +242,7 @@ class SessionDetailsFragment : Fragment(),
 
     private fun launchMeeting() {
         viewModel.attend()?.addOnSuccessListener {
-            JitsiMeetActivity.launch(context, viewModel.getMeetingOptions())
+            JitsiMeetActivity.launch(context, viewModel.getMeetingOptions(requireContext()))
         }?.addOnFailureListener {
             //TODO:
         }

@@ -16,3 +16,6 @@
 /app/build/
 private_key.pepk
 /app/google-services.json
+*/google-services.json
+maahitakeystore.*
+/app/src/main/assets/Jaas-service.json

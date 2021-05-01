@@ -1,5 +1,6 @@
 package com.mobile.maahita.ui.sessionDetails
 
+import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
@@ -98,8 +99,8 @@ class SessionDetailsViewModel : SessionsListViewModel() {
         return formatter.format(session.value?.sessiondate)
     }
 
-    fun getMeetingOptions(): JitsiMeetConferenceOptions? {
-        val meetingManager = MeetingManager()
+    fun getMeetingOptions(context: Context): JitsiMeetConferenceOptions? {
+        val meetingManager = MeetingManager(context)
         val meetingOptions = meetingManager.getMeetingOptions(
             session.value?.meetingID ?: "",
             session.value?.title ?: ""
