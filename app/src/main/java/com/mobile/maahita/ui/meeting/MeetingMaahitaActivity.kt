@@ -38,11 +38,11 @@ class MeetingMaahitaActivity : FragmentActivity(), JitsiMeetActivityInterface {
         super.onCreate(savedInstanceState)
         view = JitsiMeetView(this)
 
-        sessionID = intent.getStringExtra("sessionId")
-        meetingID = intent.getStringExtra("meetingId")
-        meetingTitle = intent.getStringExtra("sessionTitle")
+        sessionID = intent.getStringExtra("sessionId").toString()
+        meetingID = intent.getStringExtra("meetingId").toString()
+        meetingTitle = intent.getStringExtra("sessionTitle").toString()
 
-        val meetingManager = MeetingManager()
+        val meetingManager = MeetingManager(this.applicationContext)
         val meetingOptions =
             meetingManager.getMeetingOptions(meetingID, meetingTitle)
         view?.join(meetingOptions)

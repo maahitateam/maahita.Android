@@ -109,36 +109,40 @@ class SettingsFragment : Fragment() {
         }
 
         this.removeAccountButton.setOnClickListener {
-            MaterialAlertDialogBuilder(context)
-                .setTitle("Account removal alert")
-                .setMessage("So sad, we will be missing you. Are you sure? You want to leave us?")
-                .setPositiveButton("Yes") { dialog, which ->
-                    settingsViewModel.removeAccount()?.addOnSuccessListener {
+            context?.let { it1 ->
+                MaterialAlertDialogBuilder(it1)
+                    .setTitle("Account removal alert")
+                    .setMessage("So sad, we will be missing you. Are you sure? You want to leave us?")
+                    .setPositiveButton("Yes") { dialog, which ->
+                        settingsViewModel.removeAccount()?.addOnSuccessListener {
+                            Snackbar.make(
+                                view,
+                                "Your account has been removed.",
+                                Snackbar.LENGTH_LONG
+                            ).show()
+                            findNavController().navigate(R.id.navigation_sessions)
+                        }
+                    }.setNegativeButton("No") { dialog, which ->
                         Snackbar.make(
                             view,
-                            "Your account has been removed.",
+                            "Thanks for coming back. Enjoy learning with us",
                             Snackbar.LENGTH_LONG
                         ).show()
-                        findNavController().navigate(R.id.navigation_sessions)
-                    }
-                }.setNegativeButton("No") { dialog, which ->
-                    Snackbar.make(
-                        view,
-                        "Thanks for coming back. Enjoy learning with us",
-                        Snackbar.LENGTH_LONG
-                    ).show()
-                }.show()
+                    }.show()
+            }
         }
 
         logoutAccount.setOnClickListener {
-            MaterialAlertDialogBuilder(context)
-                .setTitle("Logout alert")
-                .setMessage("Are you sure? You want to logout?")
-                .setPositiveButton("Yes") { dialog, which ->
-                    settingsViewModel.logout()
-                    findNavController().navigate(R.id.navigation_sessions)
-                }.setNegativeButton("No") { dialog, which ->
-                }.show()
+            context?.let { it1 ->
+                MaterialAlertDialogBuilder(it1)
+                    .setTitle("Logout alert")
+                    .setMessage("Are you sure? You want to logout?")
+                    .setPositiveButton("Yes") { dialog, which ->
+                        settingsViewModel.logout()
+                        findNavController().navigate(R.id.navigation_sessions)
+                    }.setNegativeButton("No") { dialog, which ->
+                    }.show()
+            }
         }
     }
 
