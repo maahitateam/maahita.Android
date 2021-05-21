@@ -88,6 +88,7 @@ class MeetingMaahitaActivity : FragmentActivity(), JitsiMeetActivityInterface {
         permissions: Array<String>,
         grantResults: IntArray
     ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         JitsiMeetActivityDelegate.onRequestPermissionsResult(requestCode, permissions, grantResults)
     }
 

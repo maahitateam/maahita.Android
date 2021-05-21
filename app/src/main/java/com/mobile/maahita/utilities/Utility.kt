@@ -1,6 +1,7 @@
 package com.mobile.maahita.utilities
 
 import android.content.Context
+import android.content.res.AssetManager
 import java.io.IOException
 import java.util.*
 
@@ -20,13 +21,12 @@ class Utility {
             val jsonString: String
             try {
                 jsonString = context.assets.open(fileName).bufferedReader().use { it.readText() }
+                return jsonString
             } catch (ioException: IOException) {
-                ioException.printStackTrace()
-                return null
+                throw ioException
+            } catch (exception: Exception) {
+                throw exception
             }
-            return jsonString
         }
     }
-
-
 }

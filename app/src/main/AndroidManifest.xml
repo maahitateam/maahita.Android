@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.mobile.maahita">
+    package="com.mobile.maahita"
+    tools:ignore="MissingLeanbackLauncher">
 
     <uses-feature
-        android:name="android.hardware.touchscreen"
+        android:name="android.software.leanback"
         android:required="false" />
     <uses-feature
-        android:name="android.software.leanback"
-        android:required="true" />
-    <uses-feature
-        android:name="android.hardware.camera"
+        android:name="android.hardware.touchscreen"
         android:required="false" />
 
     <uses-permission android:name="android.permission.CAMERA" />
@@ -28,22 +26,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:targetApi="n">
-        <activity
-            android:name=".MaahitaTVActivity"
-            android:banner="@drawable/app_icon_your_company"
-            android:icon="@drawable/app_icon_your_company"
-            android:label="@string/title_activity_maahita_t_v"
-            android:logo="@drawable/app_icon_your_company"
-            android:screenOrientation="landscape">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".MaahitaTVDetailsActivity" />
-        <activity android:name=".PlaybackActivity" />
-        <activity android:name=".BrowseErrorActivity" />
-
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/ic_stat_notif_icon" />

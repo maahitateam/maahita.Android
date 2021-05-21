@@ -156,7 +156,9 @@ class HomeFragment : Fragment(), OnDashboardItemClickListener {
                 val meetingManager = MeetingManager(this.requireContext())
                 val meetingOptions =
                     meetingManager.getMeetingOptions(liveSession.meetingID, liveSession.title)
-                JitsiMeetActivity.launch(this.context, meetingOptions)
+                meetingOptions?.let {
+                    JitsiMeetActivity.launch(this.context, it)
+                }
             }
         else {
             findNavController().navigate(R.id.action_sessiondetails_to_login)
